@@ -17,13 +17,14 @@
  * 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA.
  */
 
-#include "uart.h"
-#include "uartcfg.h"
+#include <stdint.h>
+#include <string.h>
 
 #include <avr/io.h>
 #include <util/delay.h>
-#include <stdint.h>
-#include <avr/pgmspace.h>
+
+#include "uart.h"
+#include "uartcfg.h"
 
 #define TX_BIT	(1 << UART_TX_BIT)
 
