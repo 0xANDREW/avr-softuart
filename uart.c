@@ -57,15 +57,15 @@ void uart_tx(uint8_t byte) {
 }
 
 /*!
- * Send a text string (in pgmspace) to the UART.
+ * Send a text string to the UART.
  * String shall be null-terminated!
  */
 void uart_tx_str(const char* str) {
-	char c = pgm_read_byte(str);
-	while (c) {
-		str++;
-		uart_tx(c);
-		c = pgm_read_byte(str);
+  uint8_t pos = 0;
+  uint8_t len = strlen(str);
+  
+  while (pos < len){
+		uart_tx(str[pos++]);
 	}
 }
 
